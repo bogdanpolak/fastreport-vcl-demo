@@ -18,11 +18,13 @@ type
     tmrReady: TTimer;
     Label2: TLabel;
     GroupBox1: TGroupBox;
+    btnShowExercises: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure tmrReadyTimer(Sender: TObject);
+    procedure btnShowExercisesClick(Sender: TObject);
   private
     procedure FillEmployeeComboBox (EmployeeCB: TComboBox);
     procedure SetCurrentUser(id: integer);
@@ -38,7 +40,15 @@ implementation
 
 {$R *.dfm}
 
-uses DataModuleMain, FormView;
+uses DataModuleMain, FormView, FormExercises;
+
+procedure TForm1.btnShowExercisesClick(Sender: TObject);
+begin
+  FormReportExercises.Show;
+  FormReportExercises.Left := Left + Width;
+  FormReportExercises.Top := Top;
+  FormReportExercises.Height := Height;
+end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin

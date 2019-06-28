@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   FormMain in 'FormMain.pas' {Form1},
   DataModuleMain in 'DataModuleMain.pas' {DataModule1: TDataModule},
-  FormView in 'FormView.pas' {FormViewData};
+  FormView in 'FormView.pas' {FormViewData},
+  FormExercises in 'FormExercises.pas' {FormReportExercises};
 
 {$R *.res}
 
@@ -14,5 +15,6 @@ begin
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TDataModule1, DataModule1);
   Application.CreateForm(TFormViewData, FormViewData);
+  Application.CreateForm(TFormReportExercises, FormReportExercises);
   Application.Run;
 end.
