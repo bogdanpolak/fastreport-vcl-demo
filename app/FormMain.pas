@@ -45,6 +45,9 @@ uses DataModuleMain, FormView, FormExercises;
 procedure TForm1.btnShowExercisesClick(Sender: TObject);
 begin
   FormReportExercises.Show;
+  FormReportExercises.Left := Left + Width;
+  FormReportExercises.Top := Top;
+  FormReportExercises.Height := Height;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
