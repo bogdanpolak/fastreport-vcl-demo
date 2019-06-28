@@ -25,7 +25,6 @@ object Form1: TForm1
     Caption = 'Open FastReport Designer'
     TabOrder = 0
     OnClick = Button1Click
-    ExplicitTop = 110
   end
   object Button2: TButton
     AlignWithMargins = True
@@ -62,7 +61,6 @@ object Form1: TForm1
     Align = alTop
     Caption = 'Curent User (Employee):'
     TabOrder = 3
-    ExplicitTop = 55
     object ComboBox1: TComboBox
       AlignWithMargins = True
       Left = 5
@@ -81,9 +79,6 @@ object Form1: TForm1
       ParentFont = False
       TabOrder = 0
       OnChange = ComboBox1Change
-      ExplicitLeft = 3
-      ExplicitTop = 55
-      ExplicitWidth = 399
     end
   end
   object Panel1: TPanel
@@ -96,9 +91,6 @@ object Form1: TForm1
     BevelOuter = bvNone
     Padding.Top = 10
     TabOrder = 4
-    ExplicitLeft = 5
-    ExplicitTop = 18
-    ExplicitWidth = 175
     object Label2: TLabel
       AlignWithMargins = True
       Left = 3
@@ -117,6 +109,17 @@ object Form1: TForm1
       WordWrap = True
       ExplicitWidth = 267
     end
+  end
+  object btnShowExercises: TButton
+    AlignWithMargins = True
+    Left = 3
+    Top = 207
+    Width = 399
+    Height = 34
+    Align = alTop
+    Caption = 'Show Report Exercises'
+    TabOrder = 5
+    OnClick = btnShowExercisesClick
   end
   object tmrReady: TTimer
     Interval = 1
