@@ -14,8 +14,10 @@ type
     Button1: TButton;
     ActionList1: TActionList;
     actCreateReport1EmployeeList: TAction;
-    Action2: TAction;
+    actCreateReport2CustomerSalesMD: TAction;
+    Button2: TButton;
     procedure actCreateReport1EmployeeListExecute(Sender: TObject);
+    procedure actCreateReport2CustomerSalesMDExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,6 +74,58 @@ begin
     Top := 70;
     Height := 26.5;
     DataSet := frxds;
+  end;
+  DataModule1.ShowReportDesigner;
+end;
+
+procedure TFormReportExercises.actCreateReport2CustomerSalesMDExecute(
+  Sender: TObject);
+var
+  frx: TfrxReport;
+  frxds1: TfrxDataset;
+  frxds2: TfrxDataset;
+  frxds3: TfrxDataset;
+  Page: TfrxReportPage;
+  DataBand1: TfrxMasterData;
+  DataBand2: TfrxDetailData;
+  DataBand3: TfrxSubdetailData;
+begin
+  frx := DataModule1.frxReport1;
+  frxds1 := DataModule1.frxdsCustomers;
+  frxds2 := DataModule1.frxdsOrders;
+  frxds3 := DataModule1.frxdsOrderDetails;
+  with frx do begin
+    Clear;
+    DataSets.Add(frxds1);
+    DataSets.Add(frxds2);
+    DataSets.Add(frxds3);
+  end;
+  Page := TfrxReportPage.Create(frx);
+  with Page do begin
+    CreateUniqueName;
+    SetDefaults;
+    // Orientation := TPrinterOrientation.poLandscape;
+  end;
+  DataBand1 := TfrxMasterData.Create(Page);
+  with DataBand1 do begin
+    Name := 'CustomerBand';
+    Top := 20;
+    Height := 26.5;
+    DataSet := frxds1;
+  end;
+  DataBand2 := TfrxDetailData.Create(Page);
+  with DataBand2 do begin
+    Name := 'OrderBand';
+    Top := 60;
+    Height := 26.5;
+    DataSet := frxds2;
+  end;
+  DataBand3 := TfrxSubdetailData.Create(Page);
+  with DataBand3 do begin
+    Name := 'OrderDetailBand';
+    Top := 100;
+    Height := 26.5;
+    DataSet := frxds3;
   end;
   DataModule1.ShowReportDesigner;
 end;
