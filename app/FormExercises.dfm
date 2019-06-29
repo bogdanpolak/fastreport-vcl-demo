@@ -22,18 +22,26 @@ object FormReportExercises: TFormReportExercises
     Align = alClient
     Caption = 'GroupBox1'
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = -2
     object Button1: TButton
       AlignWithMargins = True
       Left = 5
       Top = 18
       Width = 233
       Height = 39
+      Action = actCreateReport1EmployeeList
       Align = alTop
-      Caption = 'Button1'
       TabOrder = 0
-      OnClick = Button1Click
+    end
+  end
+  object ActionList1: TActionList
+    Left = 40
+    Top = 88
+    object actCreateReport1EmployeeList: TAction
+      Caption = 'Create Report: EmployeeList'
+      OnExecute = actCreateReport1EmployeeListExecute
+    end
+    object Action2: TAction
+      Caption = 'Action2'
     end
   end
 end

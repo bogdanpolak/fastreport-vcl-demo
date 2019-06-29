@@ -6,13 +6,16 @@ uses
   Winapi.Windows, Winapi.Messages,
   System.SysUtils, System.Variants, System.Classes, System.UITypes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
-  frxClass;
+  frxClass, System.Actions, Vcl.ActnList;
 
 type
   TFormReportExercises = class(TForm)
     GroupBox1: TGroupBox;
     Button1: TButton;
-    procedure Button1Click(Sender: TObject);
+    ActionList1: TActionList;
+    actCreateReport1EmployeeList: TAction;
+    Action2: TAction;
+    procedure actCreateReport1EmployeeListExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,7 +31,8 @@ implementation
 
 uses DataModuleMain;
 
-procedure TFormReportExercises.Button1Click(Sender: TObject);
+procedure TFormReportExercises.actCreateReport1EmployeeListExecute(
+  Sender: TObject);
 var
   frx: TfrxReport;
   Page: TfrxReportPage;
@@ -69,7 +73,7 @@ begin
     Height := 26.5;
     DataSet := frxds;
   end;
-  frx.DesignReport;
+  DataModule1.ShowReportDesigner;
 end;
 
 end.
