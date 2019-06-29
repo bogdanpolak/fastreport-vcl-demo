@@ -52,11 +52,6 @@ end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  DataModule1.frxReport1.Variables['UserName'] :=
-    QuotedStr (DataModule1.EmployeeName);
-  DataModule1.frxReport1.Variables['UserPosition'] :=
-    QuotedStr (DataModule1.EmployeePosition);
-
   DataModule1.ShowReportDesigner;
 end;
 

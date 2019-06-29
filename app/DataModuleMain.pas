@@ -10,7 +10,7 @@ uses
   FireDAC.DApt.Intf, FireDAC.DApt, frxDesgn, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, frxClass, frxDBSet, frxDBXComponents, Data.DBXFirebird,
   Data.SqlExpr, frxExportPDF, frxExportXLSX, frxExportBaseDialog, frxExportCSV,
-  frxTableObject, frxCross, frxDCtrl, frxBarcode;
+  frxVariables, frxTableObject, frxCross, frxDCtrl, frxBarcode;
 
 type
   TConnectionResult = (connOK, connInvalidUserPassword, connServerGone,
@@ -90,6 +90,8 @@ end;
 
 procedure TDataModule1.ShowReportDesigner;
 begin
+  frxReport1.Variables['UserName'] := QuotedStr(EmployeeName);
+  frxReport1.Variables['UserPosition'] := QuotedStr (EmployeePosition);
   frxReport1.DesignReport;
 end;
 
