@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages,
   System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.ComCtrls;
+  Vcl.ComCtrls, System.Actions, Vcl.ActnList;
 
 type
   TForm1 = class(TForm)
@@ -18,13 +18,16 @@ type
     tmrReady: TTimer;
     Label2: TLabel;
     GroupBox1: TGroupBox;
-    btnShowExercises: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    Button3: TButton;
+    ActionList1: TActionList;
+    actOpenReportDesigner: TAction;
+    actViewDatasets: TAction;
+    actReportExercisesForm: TAction;
     procedure ComboBox1Change(Sender: TObject);
     procedure tmrReadyTimer(Sender: TObject);
-    procedure btnShowExercisesClick(Sender: TObject);
+    procedure actOpenReportDesignerExecute(Sender: TObject);
+    procedure actViewDatasetsExecute(Sender: TObject);
+    procedure actReportExercisesFormExecute(Sender: TObject);
   private
     procedure FillEmployeeComboBox (EmployeeCB: TComboBox);
     procedure SetCurrentUser(id: integer);
@@ -42,27 +45,22 @@ implementation
 
 uses DataModuleMain, FormView, FormExercises;
 
-procedure TForm1.btnShowExercisesClick(Sender: TObject);
+procedure TForm1.actOpenReportDesignerExecute(Sender: TObject);
+begin
+  DataModule1.ShowReportDesigner;
+end;
+
+procedure TForm1.actViewDatasetsExecute(Sender: TObject);
+begin
+  FormViewData.Show;
+end;
+
+procedure TForm1.actReportExercisesFormExecute(Sender: TObject);
 begin
   FormReportExercises.Show;
   FormReportExercises.Left := Left + Width;
   FormReportExercises.Top := Top;
   FormReportExercises.Height := Height;
-end;
-
-procedure TForm1.Button1Click(Sender: TObject);
-begin
-  DataModule1.frxReport1.Variables['UserName'] :=
-    QuotedStr (DataModule1.EmployeeName);
-  DataModule1.frxReport1.Variables['UserPosition'] :=
-    QuotedStr (DataModule1.EmployeePosition);
-
-  DataModule1.ShowReportDesigner;
-end;
-
-procedure TForm1.Button2Click(Sender: TObject);
-begin
-  FormViewData.Show;
 end;
 
 procedure TForm1.ComboBox1Change(Sender: TObject);
@@ -125,7 +123,8 @@ var
   res: TConnectionResult;
 begin
   tmrReady.Enabled := false;
-  SetCurrentUser(EmployeeArray[0].id);
+  // ----------------------------------------
+  // Database connect
   res := DataModule1.ConnectDatabase;
   case res of
     connOK: ;
@@ -134,6 +133,10 @@ begin
     connNoDatabaseFile: ShowMessage('[FB/IB] Server nie mo¿e odnaleŸæ pliku z baz¹ danych');
     connOther: ShowMessage('B³¹d po³¹czenia. Nie mo¿na rozpoznaæ przyczyny b³êdu.');
   end;
+  // ----------------------------------------
+  // Employee list and combo
+  FillEmployeeComboBox (ComboBox1);
+  SetCurrentUser(EmployeeArray[0].id);
 end;
 
 procedure TForm1.FillEmployeeComboBox (EmployeeCB: TComboBox);
@@ -151,11 +154,6 @@ begin
   end;
   EmployeeCB.ItemIndex := 0;
   EmployeeCB.Enabled := True;
-end;
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-  FillEmployeeComboBox (ComboBox1);
 end;
 
 end.
