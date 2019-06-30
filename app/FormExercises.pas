@@ -19,6 +19,7 @@ type
     Button3: TButton;
     actCreateReport3CustomerSalesAgregated: TAction;
     Label1: TLabel;
+    Label2: TLabel;
     procedure actCreateReport1EmployeeListExecute(Sender: TObject);
     procedure actCreateReport2CustomerSalesMDExecute(Sender: TObject);
     procedure actCreateReport3CustomerSalesAgregatedExecute(Sender: TObject);
@@ -84,7 +85,6 @@ begin
     Height := 26.5;
     DataSet := frxds;
   end;
-  DataModule1.ShowReportDesigner;
 end;
 
 procedure TFormReportExercises.actCreateReport2CustomerSalesMDExecute
@@ -140,7 +140,6 @@ begin
     Height := 26.5;
     DataSet := frxds3;
   end;
-  DataModule1.ShowReportDesigner;
 end;
 
 procedure TFormReportExercises.actCreateReport3CustomerSalesAgregatedExecute
@@ -181,7 +180,6 @@ begin
     Height := 26.5;
     DataSet := frxds;
   end;
-  DataModule1.ShowReportDesigner;
 end;
 
 end.
