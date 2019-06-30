@@ -108,7 +108,6 @@ begin
   with Page do begin
     CreateUniqueName;
     SetDefaults;
-    // Orientation := TPrinterOrientation.poLandscape;
   end;
   DataBand1 := TfrxMasterData.Create(Page);
   with DataBand1 do begin
@@ -135,8 +134,39 @@ begin
 end;
 
 procedure TFormReportExercises.actCreateReport3CustomerSalesAgregatedExecute(Sender: TObject);
+var
+  frx: TfrxReport;
+  frxds: TfrxDataset;
+  Page: TfrxReportPage;
+  DataBand1: TfrxMasterData;
+  GroupBand1: TfrxGroupHeader;
 begin
-  // x
+  frx := DataModule1.frxReport1;
+  frxds := DataModule1.frxdsCustomerOrders;
+  with frx do begin
+    Clear;
+    DataSets.Add(frxds);
+  end;
+  Page := TfrxReportPage.Create(frx);
+  with Page do begin
+    CreateUniqueName;
+    SetDefaults;
+  end;
+  GroupBand1 := TfrxGroupHeader.Create(Page);
+  with GroupBand1 do begin
+    Name := 'CustomerGroupBand';
+    Top := 20;
+    Height := 26.5;
+    GroupBand1.Condition := 'CustomerOrders."CUSTOMERID"';
+  end;
+  DataBand1 := TfrxMasterData.Create(Page);
+  with DataBand1 do begin
+    CreateUniqueName;
+    Top := 60;
+    Height := 26.5;
+    DataSet := frxds;
+  end;
+  DataModule1.ShowReportDesigner;
 end;
 
 end.
