@@ -16,8 +16,12 @@ type
     actCreateReport1EmployeeList: TAction;
     actCreateReport2CustomerSalesMD: TAction;
     Button2: TButton;
+    Button3: TButton;
+    actCreateReport3CustomerSalesAgregated: TAction;
+    Label1: TLabel;
     procedure actCreateReport1EmployeeListExecute(Sender: TObject);
     procedure actCreateReport2CustomerSalesMDExecute(Sender: TObject);
+    procedure actCreateReport3CustomerSalesAgregatedExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -128,6 +132,11 @@ begin
     DataSet := frxds3;
   end;
   DataModule1.ShowReportDesigner;
+end;
+
+procedure TFormReportExercises.actCreateReport3CustomerSalesAgregatedExecute(Sender: TObject);
+begin
+  // x
 end;
 
 end.
