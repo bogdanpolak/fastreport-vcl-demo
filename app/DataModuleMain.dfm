@@ -1,5 +1,6 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Height = 555
   Width = 544
   object frxReport1: TfrxReport
@@ -46,7 +47,7 @@ object DataModule1: TDataModule1
     Left = 424
     Top = 80
   end
-  object FDConnction1: TFDConnection
+  object FDConnection1: TFDConnection
     Params.Strings = (
       'ConnectionDef=FB_Demo')
     LoginPrompt = False
@@ -54,7 +55,7 @@ object DataModule1: TDataModule1
     Top = 40
   end
   object dsCustomers: TFDQuery
-    Connection = FDConnction1
+    Connection = FDConnection1
     SQL.Strings = (
       'SELECT * FROM {id Customers}')
     Left = 224
@@ -86,7 +87,7 @@ object DataModule1: TDataModule1
     MasterSource = srcCustomers
     MasterFields = 'CUSTOMERID'
     DetailFields = 'CUSTOMERID'
-    Connection = FDConnction1
+    Connection = FDConnection1
     FetchOptions.AssignedValues = [evCache]
     FetchOptions.Cache = [fiBlobs, fiMeta]
     SQL.Strings = (
@@ -191,7 +192,7 @@ object DataModule1: TDataModule1
     MasterSource = srcOrders
     MasterFields = 'ORDERID'
     DetailFields = 'ORDERID'
-    Connection = FDConnction1
+    Connection = FDConnection1
     FetchOptions.AssignedValues = [evCache]
     FetchOptions.Cache = [fiBlobs, fiMeta]
     SQL.Strings = (
@@ -231,7 +232,7 @@ object DataModule1: TDataModule1
     Top = 176
   end
   object dsEmployees: TFDQuery
-    Connection = FDConnction1
+    Connection = FDConnection1
     SQL.Strings = (
       'select * from {id Employees}')
     Left = 224
@@ -305,7 +306,7 @@ object DataModule1: TDataModule1
     Top = 384
   end
   object dsCustomerOrders: TFDQuery
-    Connection = FDConnction1
+    Connection = FDConnection1
     SQL.Strings = (
       
         'SELECT cust.CustomerID, CompanyName, cust.ContactName, cust.City' +
@@ -356,7 +357,7 @@ object DataModule1: TDataModule1
     Top = 264
   end
   object dsOrdersValue: TFDQuery
-    Connection = FDConnction1
+    Connection = FDConnection1
     SQL.Strings = (
       'SELECT '
       '  cust.CustomerID, cust.Country, '

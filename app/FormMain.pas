@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages,
   System.SysUtils, System.Variants, System.Classes,
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.ComCtrls, System.Actions, Vcl.ActnList;
+  Vcl.ComCtrls, System.Actions, Vcl.ActnList,
+  AppConfiguration;
 
 type
   TForm1 = class(TForm)
@@ -29,6 +30,7 @@ type
     procedure actViewDatasetsExecute(Sender: TObject);
     procedure actReportExercisesFormExecute(Sender: TObject);
   private
+    AppConfig: TAppConfiguration;
     procedure FillEmployeeComboBox (EmployeeCB: TComboBox);
     procedure SetCurrentUser(id: integer);
     { Private declarations }
@@ -123,6 +125,12 @@ var
   res: TConnectionResult;
 begin
   tmrReady.Enabled := false;
+  // ----------------------------------------
+  // Application configuration
+  AppConfig := TAppConfiguration.Create(self);
+  AppConfig.LoadFromIniFile;
+  actReportExercisesForm.Visible := (AppConfig.AppLevel > 1);
+  DataModule1.AppConfiguration := AppConfig;
   // ----------------------------------------
   // Database connect
   res := DataModule1.ConnectDatabase;
