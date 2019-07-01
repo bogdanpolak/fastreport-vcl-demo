@@ -129,6 +129,7 @@ begin
   // Application configuration
   AppConfig := TAppConfiguration.Create(self);
   AppConfig.LoadFromIniFile;
+  actReportExercisesForm.Visible := (AppConfig.AppLevel > 1);
   DataModule1.AppConfiguration := AppConfig;
   // ----------------------------------------
   // Database connect
