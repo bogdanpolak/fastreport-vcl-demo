@@ -9,8 +9,10 @@ uses
   FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, frxDesgn, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, frxClass, frxDBSet, frxDBXComponents, Data.DBXFirebird,
-  Data.SqlExpr, frxExportPDF, frxExportXLSX, frxExportBaseDialog, frxExportCSV,
-  frxVariables, frxTableObject, frxCross, frxDCtrl, frxBarcode;
+  FireDAC.Phys.IBWrapper, Data.SqlExpr,
+  frxExportPDF, frxExportXLSX, frxExportBaseDialog, frxExportCSV,
+  frxVariables, frxTableObject, frxCross, frxDCtrl, frxBarcode,
+  AppConfiguration;
 
 type
   TConnectionResult = (connOK, connInvalidUserPassword, connServerGone,
@@ -19,7 +21,7 @@ type
   TDataModule1 = class(TDataModule)
     frxReport1: TfrxReport;
     frxdsCustomers: TfrxDBDataset;
-    FDConnction1: TFDConnection;
+    FDConnection1: TFDConnection;
     dsCustomers: TFDQuery;
     frxDesigner1: TfrxDesigner;
     dsOrders: TFDQuery;
@@ -51,6 +53,7 @@ type
   private
     FEmployeeName: String;
     FEmployeePosition: String;
+    FAppConfiguration: TAppConfiguration;
     { Private declarations }
   public
     procedure ShowReportDesigner;
@@ -58,6 +61,8 @@ type
     property EmployeeName: String read FEmployeeName write FEmployeeName;
     property EmployeePosition: String read FEmployeePosition
       write FEmployeePosition;
+    property AppConfiguration: TAppConfiguration read FAppConfiguration
+      write FAppConfiguration;
   end;
 
 var
@@ -71,35 +76,48 @@ implementation
 
 function TDataModule1.ConnectDatabase: TConnectionResult;
 begin
+  if (AppConfiguration<>nil) and (AppConfiguration.DatabaseName<>'') then begin
+    FDConnection1.ConnectionDefName := '';
+    FDConnection1.DriverName := 'FB';
+    with FDConnection1.Params as TFDPhysFBConnectionDefParams do begin
+      Protocol := ipTCPIP;
+      Server := AppConfiguration.DatabaseServer;
+      Database := AppConfiguration.DatabaseName;
+      UserName := AppConfiguration.DatabaseUser;
+      Password := AppConfiguration.DatabasePassword;
+      CharacterSet := csUTF8;
+    end;
+  end;
   try
-    FDConnction1.Open();
+    FDConnection1.Open();
     Result := connOK;
   except
-  on E: EFDDBEngineException do begin
-    if E.Kind = ekUserPwdInvalid then
-      Result := connInvalidUserPassword
-    else if E.Kind = ekServerGone then
-      Result := connServerGone
-    else if E.ErrorCode = 335544344 then // FireBird: Cant fide database file
-      Result := connNoDatabaseFile
-    else
-      Result := connOther;
+    on E: EFDDBEngineException do
+    begin
+      if E.Kind = ekUserPwdInvalid then
+        Result := connInvalidUserPassword
+      else if E.Kind = ekServerGone then
+        Result := connServerGone
+      else if E.ErrorCode = 335544344 then // FireBird: Cant fide database file
+        Result := connNoDatabaseFile
+      else
+        Result := connOther;
+    end;
   end;
-end;
 
 end;
 
 procedure TDataModule1.DataModuleCreate(Sender: TObject);
 begin
-  if FDConnction1.Connected then
-    raise Exception.Create('Switch off the database connection: '+
-      FDConnction1.Name);
+  if FDConnection1.Connected then
+    raise Exception.Create('Switch off the database connection: ' +
+      FDConnection1.Name);
 end;
 
 procedure TDataModule1.ShowReportDesigner;
 begin
   frxReport1.Variables['UserName'] := QuotedStr(EmployeeName);
-  frxReport1.Variables['UserPosition'] := QuotedStr (EmployeePosition);
+  frxReport1.Variables['UserPosition'] := QuotedStr(EmployeePosition);
   frxReport1.DesignReport;
 end;
 
