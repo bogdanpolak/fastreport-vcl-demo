@@ -5,7 +5,8 @@ uses
   FormMain in 'FormMain.pas' {Form1},
   DataModuleMain in 'DataModuleMain.pas' {DataModule1: TDataModule},
   FormView in 'FormView.pas' {FormViewData},
-  FormExercises in 'FormExercises.pas' {FormReportExercises};
+  FormExercises in 'FormExercises.pas' {FormReportExercises},
+  AppConfiguration in 'AppConfiguration.pas';
 
 {$R *.res}
 

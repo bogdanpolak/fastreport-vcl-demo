@@ -46,8 +46,6 @@ object Form1: TForm1
       item
         Width = 50
       end>
-    ExplicitTop = 257
-    ExplicitWidth = 405
   end
   object GroupBox1: TGroupBox
     AlignWithMargins = True
@@ -60,7 +58,6 @@ object Form1: TForm1
     Align = alTop
     Caption = 'Curent User (Employee):'
     TabOrder = 0
-    ExplicitWidth = 399
     object ComboBox1: TComboBox
       AlignWithMargins = True
       Left = 5
@@ -79,7 +76,6 @@ object Form1: TForm1
       ParentFont = False
       TabOrder = 0
       OnChange = ComboBox1Change
-      ExplicitWidth = 389
     end
   end
   object Panel1: TPanel
@@ -92,7 +88,6 @@ object Form1: TForm1
     BevelOuter = bvNone
     Padding.Top = 10
     TabOrder = 5
-    ExplicitWidth = 399
     object Label2: TLabel
       AlignWithMargins = True
       Left = 3
