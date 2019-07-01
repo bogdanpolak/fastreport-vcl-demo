@@ -47,6 +47,7 @@ type
     frxReportTableObject1: TfrxReportTableObject;
     frxDialogControls1: TfrxDialogControls;
     frxBarCodeObject1: TfrxBarCodeObject;
+    procedure DataModuleCreate(Sender: TObject);
   private
     FEmployeeName: String;
     FEmployeePosition: String;
@@ -86,6 +87,13 @@ begin
   end;
 end;
 
+end;
+
+procedure TDataModule1.DataModuleCreate(Sender: TObject);
+begin
+  if FDConnction1.Connected then
+    raise Exception.Create('Switch off the database connection: '+
+      FDConnction1.Name);
 end;
 
 procedure TDataModule1.ShowReportDesigner;
