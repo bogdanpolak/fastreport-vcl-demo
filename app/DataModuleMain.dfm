@@ -1,7 +1,7 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Height = 555
+  Height = 568
   Width = 544
   object frxReport1: TfrxReport
     Version = '6.4.1'
@@ -138,51 +138,6 @@ object DataModule1: TDataModule1
     Left = 48
     Top = 168
   end
-  object FiredacdemoConnection: TSQLConnection
-    ConnectionName = 'FireDacDemo'
-    DriverName = 'Firebird'
-    LoginPrompt = False
-    Params.Strings = (
-      'DriverName=Firebird'
-      'DriverUnit=Data.DBXFirebird'
-      
-        'DriverPackageLoader=TDBXDynalinkDriverLoader,DbxCommonDriver260.' +
-        'bpl'
-      
-        'DriverAssemblyLoader=Borland.Data.TDBXDynalinkDriverLoader,Borla' +
-        'nd.Data.DbxCommonDriver,Version=24.0.0.0,Culture=neutral,PublicK' +
-        'eyToken=91d62ebb5b0d1b1b'
-      
-        'MetaDataPackageLoader=TDBXFirebirdMetaDataCommandFactory,DbxFire' +
-        'birdDriver260.bpl'
-      
-        'MetaDataAssemblyLoader=Borland.Data.TDBXFirebirdMetaDataCommandF' +
-        'actory,Borland.Data.DbxFirebirdDriver,Version=24.0.0.0,Culture=n' +
-        'eutral,PublicKeyToken=91d62ebb5b0d1b1b'
-      'LibraryName=dbxfb.dll'
-      'LibraryNameOsx=libsqlfb.dylib'
-      'VendorLib=fbclient.dll'
-      'VendorLibWin64=fbclient.dll'
-      'VendorLibOsx=/Library/Frameworks/Firebird.framework/Firebird'
-      'Database=C:\data\Firebird\FD-DEMO.FDB'
-      'User_Name=sysdba'
-      'Password=masterkey'
-      'Role=RoleName'
-      'MaxBlobSize=-1'
-      'LocaleCode=0000'
-      'IsolationLevel=ReadCommitted'
-      'SQLDialect=3'
-      'CommitRetain=False'
-      'WaitOnLocks=True'
-      'TrimChar=False'
-      'BlobSize=-1'
-      'ErrorResourceFile='
-      'RoleName=RoleName'
-      'ServerCharSet='
-      'Trim Char=False')
-    Left = 48
-    Top = 216
-  end
   object srcCustomers: TDataSource
     DataSet = dsCustomers
     Left = 320
@@ -263,7 +218,7 @@ object DataModule1: TDataModule1
     NoSysSymbols = True
     ForcedQuotes = False
     Left = 48
-    Top = 288
+    Top = 312
   end
   object frxXLSXExport1: TfrxXLSXExport
     FileName = '.xlsx'
@@ -276,7 +231,7 @@ object DataModule1: TDataModule1
     OpenAfterExport = False
     PictureType = gpPNG
     Left = 48
-    Top = 336
+    Top = 360
   end
   object frxPDFExport1: TfrxPDFExport
     UseFileCache = True
@@ -303,7 +258,7 @@ object DataModule1: TDataModule1
     PDFStandard = psNone
     PDFVersion = pv17
     Left = 48
-    Top = 384
+    Top = 408
   end
   object dsCustomerOrders: TFDQuery
     Connection = FDConnection1
@@ -368,8 +323,8 @@ object DataModule1: TDataModule1
         'erQuater,  '
       '  {Month(o.OrderDate)} as OrderMonth,'
       
-        '  {round( (det.UnitPrice*det.Quantity)*(1-Discount), 2 )} As Pro' +
-        'ductValue'
+        '  {floor((det.UnitPrice*det.Quantity)*(1-Discount)*100+0.5 )}/10' +
+        '0 As ProductValue'
       'FROM "Customers" cust'
       'INNER JOIN "Orders" o ON cust.CUSTOMERID = o.CUSTOMERID'
       'INNER JOIN  "Employees" e ON o.EmployeeID = e.EmployeeID'
@@ -393,18 +348,110 @@ object DataModule1: TDataModule1
   end
   object frxCrossObject1: TfrxCrossObject
     Left = 48
-    Top = 432
+    Top = 456
   end
   object frxReportTableObject1: TfrxReportTableObject
     Left = 48
-    Top = 480
+    Top = 504
   end
   object frxDialogControls1: TfrxDialogControls
-    Left = 136
-    Top = 496
+    Left = 176
+    Top = 504
   end
   object frxBarCodeObject1: TfrxBarCodeObject
-    Left = 232
-    Top = 496
+    Left = 272
+    Top = 504
+  end
+  object FiredacdemoConnection: TSQLConnection
+    ConnectionName = 'FireDacDemo'
+    DriverName = 'Firebird'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=Firebird'
+      'DriverUnit=Data.DBXFirebird'
+      
+        'DriverPackageLoader=TDBXDynalinkDriverLoader,DbxCommonDriver260.' +
+        'bpl'
+      
+        'DriverAssemblyLoader=Borland.Data.TDBXDynalinkDriverLoader,Borla' +
+        'nd.Data.DbxCommonDriver,Version=24.0.0.0,Culture=neutral,PublicK' +
+        'eyToken=91d62ebb5b0d1b1b'
+      
+        'MetaDataPackageLoader=TDBXFirebirdMetaDataCommandFactory,DbxFire' +
+        'birdDriver260.bpl'
+      
+        'MetaDataAssemblyLoader=Borland.Data.TDBXFirebirdMetaDataCommandF' +
+        'actory,Borland.Data.DbxFirebirdDriver,Version=24.0.0.0,Culture=n' +
+        'eutral,PublicKeyToken=91d62ebb5b0d1b1b'
+      'LibraryName=dbxfb.dll'
+      'LibraryNameOsx=libsqlfb.dylib'
+      'VendorLib=fbclient.dll'
+      'VendorLibWin64=fbclient.dll'
+      'VendorLibOsx=/Library/Frameworks/Firebird.framework/Firebird'
+      'Database=C:\data\Firebird\FD-DEMO.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'Role=RoleName'
+      'MaxBlobSize=-1'
+      'LocaleCode=0000'
+      'IsolationLevel=ReadCommitted'
+      'SQLDialect=3'
+      'CommitRetain=False'
+      'WaitOnLocks=True'
+      'TrimChar=False'
+      'BlobSize=-1'
+      'ErrorResourceFile='
+      'RoleName=RoleName'
+      'ServerCharSet='
+      'Trim Char=False')
+    Left = 48
+    Top = 216
+  end
+  object IbfiredacdemoConnection: TSQLConnection
+    ConnectionName = 'IBFireDacDemo'
+    DriverName = 'Interbase'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=Interbase'
+      'DriverUnit=Data.DBXInterBase'
+      
+        'DriverPackageLoader=TDBXDynalinkDriverLoader,DbxCommonDriver260.' +
+        'bpl'
+      
+        'DriverAssemblyLoader=Borland.Data.TDBXDynalinkDriverLoader,Borla' +
+        'nd.Data.DbxCommonDriver,Version=24.0.0.0,Culture=neutral,PublicK' +
+        'eyToken=91d62ebb5b0d1b1b'
+      
+        'MetaDataPackageLoader=TDBXInterbaseMetaDataCommandFactory,DbxInt' +
+        'erBaseDriver260.bpl'
+      
+        'MetaDataAssemblyLoader=Borland.Data.TDBXInterbaseMetaDataCommand' +
+        'Factory,Borland.Data.DbxInterBaseDriver,Version=24.0.0.0,Culture' +
+        '=neutral,PublicKeyToken=91d62ebb5b0d1b1b'
+      'LibraryName=dbxint.dll'
+      'LibraryNameOsx=libsqlib.dylib'
+      'VendorLib=GDS32.DLL'
+      'VendorLibWin64=ibclient64.dll'
+      'VendorLibOsx=libgds.dylib'
+      'Database=C:\Data\Interbase\FIREDAC-DEMO.IB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'Role=RoleName'
+      'MaxBlobSize=-1'
+      'LocaleCode=0000'
+      'IsolationLevel=ReadCommitted'
+      'SQLDialect=3'
+      'CommitRetain=False'
+      'WaitOnLocks=True'
+      'TrimChar=False'
+      'DisplayDriverName=InterBase Server'
+      'BlobSize=-1'
+      'ErrorResourceFile='
+      'RoleName=RoleName'
+      'ServerCharSet='
+      'Trim Char=False'
+      'SEP=')
+    Left = 50
+    Top = 266
   end
 end

@@ -8,8 +8,10 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
   FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, frxDesgn, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, frxClass, frxDBSet, frxDBXComponents, Data.DBXFirebird,
-  FireDAC.Phys.IBWrapper, Data.SqlExpr,
+  FireDAC.Comp.Client, FireDAC.Phys.IB, FireDAC.Phys.IBDef, FireDAC.Phys.IBWrapper,
+  Data.SqlExpr,
+  frxClass, frxDBSet, frxDBXComponents,
+  Data.DBXFirebird, Data.DBXInterBase,
   frxExportPDF, frxExportXLSX, frxExportBaseDialog, frxExportCSV,
   frxVariables, frxTableObject, frxCross, frxDCtrl, frxBarcode,
   AppConfiguration;
@@ -27,7 +29,6 @@ type
     dsOrders: TFDQuery;
     frxdsOrders: TfrxDBDataset;
     frxDBXComponents1: TfrxDBXComponents;
-    FiredacdemoConnection: TSQLConnection;
     srcCustomers: TDataSource;
     dsOrderDetails: TFDQuery;
     srcOrders: TDataSource;
@@ -49,6 +50,8 @@ type
     frxReportTableObject1: TfrxReportTableObject;
     frxDialogControls1: TfrxDialogControls;
     frxBarCodeObject1: TfrxBarCodeObject;
+    FiredacdemoConnection: TSQLConnection;
+    IbfiredacdemoConnection: TSQLConnection;
     procedure DataModuleCreate(Sender: TObject);
   private
     FEmployeeName: String;
