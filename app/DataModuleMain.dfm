@@ -118,6 +118,7 @@ object DataModule1: TDataModule1
       'ORDERID=ORDERID'
       'CUSTOMERID=CUSTOMERID'
       'EMPLOYEEID=EMPLOYEEID'
+      'EMPLOYEENAME=EMPLOYEENAME'
       'ORDERDATE=ORDERDATE'
       'REQUIREDDATE=REQUIREDDATE'
       'SHIPPEDDATE=SHIPPEDDATE'
@@ -126,8 +127,6 @@ object DataModule1: TDataModule1
       'SHIPNAME=SHIPNAME'
       'SHIPADDRESS=SHIPADDRESS'
       'SHIPCITY=SHIPCITY'
-      'SHIPREGION=SHIPREGION'
-      'SHIPPOSTALCODE=SHIPPOSTALCODE'
       'SHIPCOUNTRY=SHIPCOUNTRY')
     DataSet = dsOrders
     BCDToCurrency = False
@@ -341,6 +340,15 @@ object DataModule1: TDataModule1
   object frxDBDataset1: TfrxDBDataset
     UserName = 'OrdersValue'
     CloseDataSource = False
+    FieldAliases.Strings = (
+      'CUSTOMERID=CUSTOMERID'
+      'COUNTRY=COUNTRY'
+      'EMPLOYEENAME=EMPLOYEENAME'
+      'PRODUCTID=PRODUCTID'
+      'ORDERYEAR=ORDERYEAR'
+      'ORDERQUATER=ORDERQUATER'
+      'ORDERMONTH=ORDERMONTH'
+      'PRODUCTVALUE=PRODUCTVALUE')
     DataSource = srcOrdersValue
     BCDToCurrency = False
     Left = 424
