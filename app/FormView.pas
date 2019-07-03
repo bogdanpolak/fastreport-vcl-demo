@@ -36,17 +36,23 @@ uses
 procedure TFormViewData.ListBox1Click(Sender: TObject);
 var
   DataSetName: string;
-  ds: TFDQuery;
+  ds: TDataSet; //TFDQuery;
 begin
   if ListBox1.ItemIndex<0 then
     ds := nil
   else begin
     DataSetName := ListBox1.Items[ListBox1.ItemIndex];
-    ds := (DataModule1.FindComponent(DataSetName) as TFDQuery)
+    ds := (DataModule1.FindComponent(DataSetName) as TDataSet)
   end;
   DataSource1.DataSet := ds;
-  ds.Open();
-  Memo1.Lines.Text := ds.Text;
+  if ds<>nil then
+  begin
+    ds.Open();
+    if ds is TFDQuery then
+      Memo1.Lines.Text := (ds as TFDQuery).Text
+    else
+      Memo1.Lines.Text := 'Not TFDQuery dataset';
+  end;
 end;
 
 end.

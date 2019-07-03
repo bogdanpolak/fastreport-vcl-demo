@@ -8,10 +8,12 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
   FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, frxDesgn, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, frxClass, frxDBSet, frxDBXComponents, Data.DBXFirebird,
-  FireDAC.Phys.IBWrapper, Data.SqlExpr,
+  FireDAC.Comp.Client, FireDAC.Phys.IB, FireDAC.Phys.IBDef, FireDAC.Phys.IBWrapper,
+  FireDAC.Stan.StorageBin,
+  frxClass, frxDBSet, frxDBXComponents,
   frxExportPDF, frxExportXLSX, frxExportBaseDialog, frxExportCSV,
   frxVariables, frxTableObject, frxCross, frxDCtrl, frxBarcode,
+  Data.SqlExpr, Data.DBXFirebird, Data.DBXInterBase,
   AppConfiguration;
 
 type
@@ -27,7 +29,6 @@ type
     dsOrders: TFDQuery;
     frxdsOrders: TfrxDBDataset;
     frxDBXComponents1: TfrxDBXComponents;
-    FiredacdemoConnection: TSQLConnection;
     srcCustomers: TDataSource;
     dsOrderDetails: TFDQuery;
     srcOrders: TDataSource;
@@ -44,11 +45,27 @@ type
     frxdsCustomerOrders: TfrxDBDataset;
     dsOrdersValue: TFDQuery;
     srcOrdersValue: TDataSource;
-    frxDBDataset1: TfrxDBDataset;
+    frxdsOrdersValue: TfrxDBDataset;
     frxCrossObject1: TfrxCrossObject;
     frxReportTableObject1: TfrxReportTableObject;
     frxDialogControls1: TfrxDialogControls;
     frxBarCodeObject1: TfrxBarCodeObject;
+    FiredacdemoConnection: TSQLConnection;
+    IbfiredacdemoConnection: TSQLConnection;
+    dsDocument: TFDMemTable;
+    dsDocumentFormID: TLargeintField;
+    dsDocumentDocDate: TDateField;
+    dsDocumentCity: TStringField;
+    dsDocumentFirstName: TStringField;
+    dsDocumentLastName: TStringField;
+    dsDocumentAddress: TStringField;
+    dsDocumentContact: TStringField;
+    PlotLocation: TStringField;
+    dsDocumentPlotLocation: TStringField;
+    dsDocumentObtainingGoal: TStringField;
+    dsDocumentIsCollectInPerson: TBooleanField;
+    srcDocument: TDataSource;
+    frxdsDocument: TfrxDBDataset;
     procedure DataModuleCreate(Sender: TObject);
   private
     FEmployeeName: String;
@@ -104,7 +121,12 @@ begin
         Result := connOther;
     end;
   end;
-
+  if AppConfiguration.AppLevel=1 then
+  begin
+    FreeAndNil (frxdsCustomerOrders);
+    FreeAndNil (frxdsOrdersValue);
+    FreeAndNil (frxdsDocument);
+  end;
 end;
 
 procedure TDataModule1.DataModuleCreate(Sender: TObject);
