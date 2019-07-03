@@ -68,8 +68,10 @@ object FormViewData: TFormViewData
       'dsCustomers'
       'dsOrders'
       'dsOrderDetails'
+      '--'
       'dsCustomerOrders'
-      'dsOrdersValue')
+      'dsOrdersValue'
+      'dsDocument')
     ParentFont = False
     TabOrder = 1
     OnClick = ListBox1Click
