@@ -1,26 +1,64 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<TfrxReport Version="6.4.1" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="167935" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="43642,3574349074" ReportOptions.Description.Text="" ReportOptions.LastChange="43646,7065113079" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
+<TfrxReport Version="6.4.1" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="167935" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="43642,3574349074" ReportOptions.Description.Text="" ReportOptions.LastChange="43649,5076855671" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
   <Variables>
     <item Name=" Employee"/>
     <item Name="UserName" Value="'Nancy Davolio'"/>
     <item Name="UserPosition" Value="'Sales Representative'"/>
     <item Name=" Document"/>
-    <item Name="City" Value="'(...miasto...)'"/>
+    <item Name="City" Value="'Łęczyce'"/>
+    <item Name="DocDate" Value="EncodeDate(2019,06,12)"/>
+    <item Name="FirstName" Value="'Bogdan'"/>
+    <item Name="LastName" Value="'Polak'"/>
+    <item Name="Address" Value="'Warszawa 01-822, ul. Schroegera 32'"/>
+    <item Name="ContactData" Value="'tel. kom.: 601-601-601, email: bogdan.polak@bsc.com.pl'"/>
+    <item Name="Office" Value="'Wójt Gminy Łęczyce'"/>
+    <item Name="RegistrationNo" Value="'102006_2.0020.967'"/>
+    <item Name="Location" Value="'Sokolniki-Las'"/>
+    <item Name="ObtainingGoal" Value="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue nisi vitae suscipit tellus mauris a. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi.'"/>
+    <item Name="IsCollectInPerson" Value="true"/>
   </Variables>
   <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
-  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" Frame.Typ="0" MirrorMode="0" HGuides.Text="" VGuides.Text="">
-    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="200,31509" Left="0" Top="18,89765" Width="718,1107" Child="Child1" Stretched="True">
-      <TfrxMemoView Name="Memo1" AllowVectorExport="True" Left="0" Top="170,07885" Width="718,1107" Height="18,89765" CanShrink="True" StretchMode="smActualHeight" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" GapX="19" LineSpacing="10" ParentFont="False" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam orci nunc, lobortis ac nunc quis, iaculis varius mauris. Praesent sed ante accumsan, varius libero at, porta lorem. Cras viverra in sapien et suscipit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin ac consequat elit. Fusce hendrerit tortor a congue varius. Duis bibendum, tellus luctus semper faucibus, augue diam laoreet velit, vitae aliquet sem quam vel dui. Nulla luctus porta mollis. Maecenas eget interdum elit. Vestibulum pretium efficitur nisi, in tempus eros faucibus ut. Phasellus vel nulla fringilla velit dapibus malesuada vehicula in purus. Sed a nibh ornare, condimentum mi ut, elementum erat. Aenean cursus varius elit quis blandit. Vivamus ultricies sodales nisl non egestas. Nam venenatis lacus eros, vitae laoreet lacus lobortis eget. "/>
-      <TfrxMemoView Name="Memo2" AllowVectorExport="True" Left="517,79561" Top="49,13389" Width="200,31509" Height="18,89765" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="[City], dnia [Date]">
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="14" RightMargin="14" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" Frame.Typ="0" MirrorMode="0" HGuides.Text="" VGuides.Text="">
+    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="589,60668" Left="0" Top="18,89765" Width="687,87446" Child="Child1" Stretched="True">
+      <TfrxMemoView Name="Memo1" Align="baWidth" AllowVectorExport="True" Left="0" Top="359,05535" Width="687,87446" Height="211,65368" CanShrink="True" StretchMode="smActualHeight" Font.Charset="1" Font.Color="-16777208" Font.Height="-16" Font.Name="Times New Roman" Font.Style="0" Frame.Typ="0" LineSpacing="8" ParentFont="False" Text="Na podstawie art. 30 ust. 1 Ustawy z dnia 27 marca 2003 r. o planowaniu i zagospodarowaniu przestrzennym (t.j. Dz.U. z 2012 r. poz. 647 z późn. zm.), zwracam się z prośbą o wydanie wypisu i wyrysu z miejscowego planu zagospodarowania przestrzennego dla działki /(-ek) o nr ewidencyjnym: [RegistrationNo] położonej/(-ych) w miejscowości [Location].&#13;&#10;&#13;&#10;Cel uzyskania wypisu i wyrysu: [ObtainingGoal].&#13;&#10;&#13;&#10;Wypis i wyrys odbiorę osobiście* / proszę przesłać na adres wnioskodawcy*.&#13;&#10;Wypis i wyrys [IIF(&#60;IsCollectInPerson&#62;,'odbiorę osobiście','proszę przesłać na adres wnioskodawcy')].">
+        <Formats>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo2" Align="baWidth" AllowVectorExport="True" Left="0" Top="34,01577" Width="687,87446" Height="18,89765" Font.Charset="1" Font.Color="-16777208" Font.Height="-15" Font.Name="Times New Roman" Font.Style="0" Frame.Typ="0" HAlign="haRight" ParentFont="False" Text="[City], dnia [DocDate]">
         <Formats>
           <item/>
           <item/>
         </Formats>
       </TfrxMemoView>
-      <TfrxMemoView Name="Memo4" AllowVectorExport="True" Left="0" Top="117,16543" Width="718,1107" Height="34,01577" Font.Charset="1" Font.Color="-16777208" Font.Height="-21" Font.Name="Arial" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Zawiadomienie o upłynięciu terminu"/>
+      <TfrxMemoView Name="Memo4" Align="baWidth" AllowVectorExport="True" Left="0" Top="222,99227" Width="687,87446" Height="30,23624" Font.Charset="1" Font.Color="-16777208" Font.Height="-24" Font.Name="Times New Roman" Font.Style="1" Frame.Typ="0" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="[Office]"/>
+      <TfrxMemoView Name="Memo5" Align="baWidth" AllowVectorExport="True" Left="0" Top="75,5906" Width="687,87446" Height="18,89765" Font.Charset="1" Font.Color="-16777208" Font.Height="-15" Font.Name="Times New Roman" Font.Style="1" Frame.Typ="0" ParentFont="False" Text="Wnioskodawca:">
+        <Formats>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo6" Align="baWidth" AllowVectorExport="True" Left="0" Top="98,26778" Width="687,87446" Height="60,47248" Font.Charset="1" Font.Color="-16777208" Font.Height="-15" Font.Name="Times New Roman" Font.Style="0" Frame.Typ="0" GapX="38" LineSpacing="5" ParentFont="False" Text="[FirstName], [LastName]&#13;&#10;Adres: [Address]&#13;&#10;Kontakt: [ContactData]">
+        <Formats>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo7" Align="baWidth" AllowVectorExport="True" Left="0" Top="264,5671" Width="687,87446" Height="68,03154" Font.Charset="1" Font.Color="-16777208" Font.Height="-19" Font.Name="Times New Roman" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="Wniosek&#13;&#10;o wydanie wpisu i wyrysu &#13;&#10;z miejscowego planu zagospodarowania przestrzennego"/>
     </TfrxReportTitle>
-    <TfrxChild Name="Child1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="90,70872" Left="0" Top="241,88992" Width="718,1107" ToNRows="0" ToNRowsMode="rmCount">
-      <TfrxMemoView Name="Memo3" AllowVectorExport="True" Left="415,7483" Top="52,91342" Width="241,88992" Height="37,7953" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text=". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . &#13;&#10;podpisano"/>
+    <TfrxChild Name="Child1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="90,70872" Left="0" Top="631,18151" Width="687,87446" ToNRows="0" ToNRowsMode="rmCount">
+      <TfrxMemoView Name="Memo3" AllowVectorExport="True" Left="381,73253" Top="49,13389" Width="306,14193" Height="37,7953" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Times New Roman" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text=". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .&#13;&#10;(podpis wnioskodawcy)"/>
     </TfrxChild>
+    <TfrxPageFooter Name="PageFooter1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="90,70872" Left="0" Top="782,36271" Width="687,87446">
+      <TfrxMemoView Name="Memo8" Align="baWidth" AllowVectorExport="True" Left="0" Top="3,77953" Width="687,87446" Height="75,5906" StretchMode="smActualHeight" Font.Charset="1" Font.Color="-16777208" Font.Height="-12" Font.Name="Times New Roman" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="* – niepotrzebne skreślić&#13;&#10;Uwaga: Opłata skarbowa za wydanie wypisu i wyrysu z miejscowego planu zagospodarowania przestrzennego jest określana zależnie od objętości wypisu i wyrysu. Opłata za wypis do 5 stron - 30 zł, powyżej 5 stron - 50 zł, za wyrys: za każdą wchodzącą w skład wyrysu pełną lub rozpoczętą część odpowiadającą stronie formatu A4 - 20 zł, ale nie więcej niż 200 zł. Maksymalny koszt wypisu i wyrysu - 250 zł. Podstawa prawna: ustawa z dnia 16 listopada 2006 r. o opłacie skarbowej (t.j. Dz.U. z 2012 r. poz. 1282 z późn. zm.)."/>
+      <TfrxLineView Name="Line1" AllowVectorExport="True" Left="-3,77953" Top="0" Width="268,34663" Height="0" Color="0" Frame.Typ="0" Diagonal="True"/>
+    </TfrxPageFooter>
   </TfrxReportPage>
 </TfrxReport>
