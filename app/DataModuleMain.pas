@@ -50,8 +50,8 @@ type
     frxReportTableObject1: TfrxReportTableObject;
     frxDialogControls1: TfrxDialogControls;
     frxBarCodeObject1: TfrxBarCodeObject;
-    FiredacdemoConnection: TSQLConnection;
-    IbfiredacdemoConnection: TSQLConnection;
+    DBXFirebirdConnection: TSQLConnection;
+    DBXInterBaseConnection: TSQLConnection;
     dsDocument: TFDMemTable;
     dsDocumentFormID: TLargeintField;
     dsDocumentDocDate: TDateField;

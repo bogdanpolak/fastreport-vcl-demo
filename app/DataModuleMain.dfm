@@ -1,8 +1,8 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Height = 568
-  Width = 544
+  Height = 502
+  Width = 636
   object frxReport1: TfrxReport
     Version = '6.4.1'
     DotMatrixReport = False
@@ -44,21 +44,21 @@ object DataModule1: TDataModule1
     CloseDataSource = False
     DataSet = dsCustomers
     BCDToCurrency = False
-    Left = 424
+    Left = 544
     Top = 80
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
       'ConnectionDef=FB_Demo')
     LoginPrompt = False
-    Left = 152
+    Left = 272
     Top = 40
   end
   object dsCustomers: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'SELECT * FROM {id Customers}')
-    Left = 224
+    Left = 344
     Top = 80
   end
   object frxDesigner1: TfrxDesigner
@@ -100,7 +100,7 @@ object DataModule1: TDataModule1
       'FROM {id Orders} o'
       'inner join {id Employees} e ON o.EmployeeID = e.EmployeeID'
       'where CUSTOMERID = :CUSTOMERID')
-    Left = 223
+    Left = 343
     Top = 128
     ParamData = <
       item
@@ -130,16 +130,16 @@ object DataModule1: TDataModule1
       'SHIPCOUNTRY=SHIPCOUNTRY')
     DataSet = dsOrders
     BCDToCurrency = False
-    Left = 424
+    Left = 544
     Top = 128
   end
   object frxDBXComponents1: TfrxDBXComponents
-    Left = 48
-    Top = 168
+    Left = 152
+    Top = 176
   end
   object srcCustomers: TDataSource
     DataSet = dsCustomers
-    Left = 320
+    Left = 440
     Top = 80
   end
   object dsOrderDetails: TFDQuery
@@ -157,7 +157,7 @@ object DataModule1: TDataModule1
       'FROM {id Order Details} det'
       'INNER JOIN {id Products} prod ON det.ProductID = prod.ProductID'
       'WHERE OrderID = :ORDERID')
-    Left = 224
+    Left = 344
     Top = 176
     ParamData = <
       item
@@ -169,7 +169,7 @@ object DataModule1: TDataModule1
   end
   object srcOrders: TDataSource
     DataSet = dsOrders
-    Left = 320
+    Left = 440
     Top = 128
   end
   object frxdsOrderDetails: TfrxDBDataset
@@ -177,24 +177,24 @@ object DataModule1: TDataModule1
     CloseDataSource = False
     DataSet = dsOrderDetails
     BCDToCurrency = False
-    Left = 424
+    Left = 544
     Top = 176
   end
   object srcOrderDetails: TDataSource
     DataSet = dsOrderDetails
-    Left = 320
+    Left = 440
     Top = 176
   end
   object dsEmployees: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
       'select * from {id Employees}')
-    Left = 224
+    Left = 344
     Top = 8
   end
   object srcEmployees: TDataSource
     DataSet = dsEmployees
-    Left = 320
+    Left = 440
     Top = 8
   end
   object frxdsEmployees: TfrxDBDataset
@@ -202,7 +202,7 @@ object DataModule1: TDataModule1
     CloseDataSource = False
     DataSource = srcEmployees
     BCDToCurrency = False
-    Left = 424
+    Left = 544
     Top = 8
   end
   object frxCSVExport1: TfrxCSVExport
@@ -217,7 +217,7 @@ object DataModule1: TDataModule1
     NoSysSymbols = True
     ForcedQuotes = False
     Left = 48
-    Top = 312
+    Top = 112
   end
   object frxXLSXExport1: TfrxXLSXExport
     FileName = '.xlsx'
@@ -230,7 +230,7 @@ object DataModule1: TDataModule1
     OpenAfterExport = False
     PictureType = gpPNG
     Left = 48
-    Top = 360
+    Top = 160
   end
   object frxPDFExport1: TfrxPDFExport
     UseFileCache = True
@@ -257,7 +257,7 @@ object DataModule1: TDataModule1
     PDFStandard = psNone
     PDFVersion = pv17
     Left = 48
-    Top = 408
+    Top = 208
   end
   object dsCustomerOrders: TFDQuery
     Connection = FDConnection1
@@ -276,12 +276,12 @@ object DataModule1: TDataModule1
       'INNER JOIN  "Employees" e ON o.EmployeeID = e.EmployeeID'
       'INNER JOIN "Order Details" det ON o.OrderID = det.ORDERID'
       'INNER JOIN "Products" prod ON det.ProductID = prod.ProductID')
-    Left = 224
+    Left = 344
     Top = 264
   end
   object srcCustomerOrders: TDataSource
     DataSet = dsCustomerOrders
-    Left = 320
+    Left = 440
     Top = 264
   end
   object frxdsCustomerOrders: TfrxDBDataset
@@ -307,7 +307,7 @@ object DataModule1: TDataModule1
       'DISCOUNT=DISCOUNT')
     DataSource = srcCustomerOrders
     BCDToCurrency = False
-    Left = 424
+    Left = 544
     Top = 264
   end
   object dsOrdersValue: TFDQuery
@@ -328,13 +328,13 @@ object DataModule1: TDataModule1
       'INNER JOIN "Orders" o ON cust.CUSTOMERID = o.CUSTOMERID'
       'INNER JOIN  "Employees" e ON o.EmployeeID = e.EmployeeID'
       'INNER JOIN "Order Details" det ON o.OrderID = det.ORDERID'
-      'ORDER BY Country')
-    Left = 224
+      'ORDER BY cust.Country')
+    Left = 344
     Top = 344
   end
   object srcOrdersValue: TDataSource
     DataSet = dsOrdersValue
-    Left = 320
+    Left = 440
     Top = 344
   end
   object frxdsOrdersValue: TfrxDBDataset
@@ -351,27 +351,27 @@ object DataModule1: TDataModule1
       'PRODUCTVALUE=PRODUCTVALUE')
     DataSource = srcOrdersValue
     BCDToCurrency = False
-    Left = 424
+    Left = 544
     Top = 344
   end
   object frxCrossObject1: TfrxCrossObject
     Left = 48
-    Top = 456
+    Top = 256
   end
   object frxReportTableObject1: TfrxReportTableObject
     Left = 48
-    Top = 504
+    Top = 304
   end
   object frxDialogControls1: TfrxDialogControls
-    Left = 176
-    Top = 504
+    Left = 48
+    Top = 352
   end
   object frxBarCodeObject1: TfrxBarCodeObject
-    Left = 272
-    Top = 504
+    Left = 48
+    Top = 400
   end
-  object FiredacdemoConnection: TSQLConnection
-    ConnectionName = 'FireDacDemo'
+  object DBXFirebirdConnection: TSQLConnection
+    ConnectionName = 'FirebirdFDDemo'
     DriverName = 'Firebird'
     LoginPrompt = False
     Params.Strings = (
@@ -412,11 +412,11 @@ object DataModule1: TDataModule1
       'RoleName=RoleName'
       'ServerCharSet='
       'Trim Char=False')
-    Left = 48
-    Top = 216
+    Left = 152
+    Top = 224
   end
-  object IbfiredacdemoConnection: TSQLConnection
-    ConnectionName = 'IBFireDacDemo'
+  object DBXInterBaseConnection: TSQLConnection
+    ConnectionName = 'InterBaseFDDemo'
     DriverName = 'Interbase'
     LoginPrompt = False
     Params.Strings = (
@@ -459,8 +459,8 @@ object DataModule1: TDataModule1
       'ServerCharSet='
       'Trim Char=False'
       'SEP=')
-    Left = 50
-    Top = 266
+    Left = 154
+    Top = 274
   end
   object dsDocument: TFDMemTable
     Active = True
@@ -527,10 +527,10 @@ object DataModule1: TDataModule1
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
     StoreDefs = True
-    Left = 224
+    Left = 344
     Top = 424
     Content = {
-      414442530F001D2F3F070000FF00010001FF02FF030400140000006400730044
+      414442530F001E1C3F070000FF00010001FF02FF030400140000006400730044
       006F00630075006D0065006E00740005000A0000005400610062006C00650006
       0000000000070000080032000000090000FF0AFF0B04000C00000046006F0072
       006D004900440005000C00000046006F0072006D00490044000C00010000000E
@@ -656,7 +656,7 @@ object DataModule1: TDataModule1
   end
   object srcDocument: TDataSource
     DataSet = dsDocument
-    Left = 320
+    Left = 440
     Top = 424
   end
   object frxdsDocument: TfrxDBDataset
@@ -664,7 +664,7 @@ object DataModule1: TDataModule1
     CloseDataSource = False
     DataSource = srcDocument
     BCDToCurrency = False
-    Left = 424
+    Left = 544
     Top = 424
   end
 end
