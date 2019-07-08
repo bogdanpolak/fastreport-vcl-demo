@@ -66,6 +66,22 @@ type
     dsDocumentIsCollectInPerson: TBooleanField;
     srcDocument: TDataSource;
     frxdsDocument: TfrxDBDataset;
+    dsBarCode: TFDMemTable;
+    dsBarCodeCountryCode: TWideStringField;
+    dsBarCodeAccountNumber: TWideStringField;
+    dsBarCodeAmount: TCurrencyField;
+    dsBarCodeEntityName: TWideStringField;
+    dsBarCodePaymentCode: TIntegerField;
+    dsBarCodeFeeDescription: TWideStringField;
+    dsBarCodeFirstAndLastName: TWideStringField;
+    dsBarCodeAddress1: TWideStringField;
+    dsBarCodeAddress2: TWideStringField;
+    dsBarCodeCurrencyCode: TWideStringField;
+    dsBarCodeDateTimeCode: TWideStringField;
+    dsBarCodeGeneratedBy: TWideStringField;
+    dsBarCodeControlNumber: TWideStringField;
+    srcBarCode: TDataSource;
+    frxdsBarCode: TfrxDBDataset;
     procedure DataModuleCreate(Sender: TObject);
   private
     FEmployeeName: String;
@@ -126,6 +142,7 @@ begin
     FreeAndNil (frxdsCustomerOrders);
     FreeAndNil (frxdsOrdersValue);
     FreeAndNil (frxdsDocument);
+    FreeAndNil (frxdsBarCode);
   end;
 end;
 
