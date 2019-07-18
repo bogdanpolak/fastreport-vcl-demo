@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="6.4.1" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="167935" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="43642,3574349074" ReportOptions.Description.Text="" ReportOptions.LastChange="43657,5562673032" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="frxdsEmployees" DataSetName="Employees"/>
+  </Datasets>
+  <Variables>
+    <item Name="UserName" Value="'Nancy Davolio'"/>
+    <item Name="UserPosition" Value="'Sales Representative'"/>
+  </Variables>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" Orientation="poLandscape" PaperWidth="297" PaperHeight="210" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="277" ColumnPositions.Text="0" Frame.Typ="0" MirrorMode="0" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="555,59091" Left="0" Top="136,06308" Width="1046,92981" ColumnWidth="0" ColumnGap="0" DataSet="frxdsEmployees" DataSetName="Employees" RowCount="0" Stretched="True">
+      <TfrxTableObject Name="TableObject1" AllowVectorExport="True" Left="132,28355" Top="0">
+        <TfrxTableColumn Name="TableColumn1" Width="132,283464566929" MinWidth="0" MaxWidth="75,5906"/>
+        <TfrxTableRow Name="TableRow1" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell1" AllowVectorExport="True" Restrictions="8" DataField="FIRSTNAME" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="[Employees.&#34;FIRSTNAME&#34;]"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow2" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell6" AllowVectorExport="True" Restrictions="8" DataField="LASTNAME" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="[Employees.&#34;LASTNAME&#34;]"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow3" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell11" AllowVectorExport="True" Restrictions="8" DataField="BIRTHDATE" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="[Employees.&#34;BIRTHDATE&#34;]"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow4" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell16" AllowVectorExport="True" Restrictions="8" DataField="HIREDATE" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="[Employees.&#34;HIREDATE&#34;]"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow5" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell21" AllowVectorExport="True" Restrictions="8" DataField="CITY" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="[Employees.&#34;CITY&#34;]"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow6" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell2" AllowVectorExport="True" Restrictions="8" DataField="COUNTRY" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="[Employees.&#34;COUNTRY&#34;]"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow7" MinHeight="0" MaxHeight="0" Height="320,905535">
+          <TfrxTableCell Name="TableCell7" AllowVectorExport="True" Restrictions="8" DataField="ADDRESS" DataSet="frxdsEmployees" DataSetName="Employees" Frame.Typ="15" GapX="4" GapY="4" Text="[Employees.&#34;ADDRESS&#34;]"/>
+        </TfrxTableRow>
+      </TfrxTableObject>
+      <TfrxTableObject Name="TableObject3" AllowVectorExport="True" Left="22,67718" Top="0">
+        <TfrxTableColumn Name="TableColumn3" Width="86,9291338582677" MinWidth="0" MaxWidth="75,5906"/>
+        <TfrxTableRow Name="TableRow15" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell17" AllowVectorExport="True" Restrictions="8" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="Imię"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow16" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell18" AllowVectorExport="True" Restrictions="8" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="Nazwisko"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow17" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell19" AllowVectorExport="True" Restrictions="8" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="Data Urodzenia"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow18" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell20" AllowVectorExport="True" Restrictions="8" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="Data zatrudnienia"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow19" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell22" AllowVectorExport="True" Restrictions="8" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="Miasto"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow20" MinHeight="0" MaxHeight="0" Height="35,905535">
+          <TfrxTableCell Name="TableCell23" AllowVectorExport="True" Restrictions="8" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" GapX="4" ParentFont="False" VAlign="vaCenter" Text="Kraj"/>
+        </TfrxTableRow>
+        <TfrxTableRow Name="TableRow21" MinHeight="0" MaxHeight="0" Height="320,905535">
+          <TfrxTableCell Name="TableCell24" AllowVectorExport="True" Restrictions="8" DataSet="frxdsEmployees" DataSetName="Employees" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Frame.Typ="15" GapX="4" GapY="4" ParentFont="False" Text="Adres"/>
+        </TfrxTableRow>
+      </TfrxTableObject>
+    </TfrxMasterData>
+    <TfrxMasterData Name="MasterData2" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="718,1107" Left="132,28355" Top="0" Vertical="True" Width="132,28355" Columns="2" ColumnWidth="340,157480314961" ColumnGap="0" DataSet="frxdsEmployees" DataSetName="Employees" RowCount="0"/>
+    <TfrxHeader Name="Header1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="718,1107" Left="22,67718" Top="0" Vertical="True" Width="86,92919" ReprintOnNewPage="True"/>
+    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="56,69295" Left="0" Top="18,89765" Width="1046,92981">
+      <TfrxMemoView Name="Memo1" Align="baWidth" AllowVectorExport="True" Left="0" Top="15,11812" Width="1046,92981" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="0" Frame.Typ="0" HAlign="haCenter" ParentFont="False" Text="Lista płac"/>
+    </TfrxReportTitle>
+  </TfrxReportPage>
+</TfrxReport>
